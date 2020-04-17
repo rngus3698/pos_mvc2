@@ -21,6 +21,14 @@ public class MenuOrder implements Serializable{
 	}
 	
 	
+	public MenuOrder(int tableNum, int price, String menu) {
+		super();
+		this.tableNum = tableNum;
+		this.price = price;
+		this.menu = menu;
+	}
+
+
 	public MenuOrder(String orderDate, int orderNum, int tableNum, int price, String menu) {
 		super();
 		this.orderDate = orderDate;

@@ -9,7 +9,6 @@ public class Seat implements Serializable{
 	 */
 	private static final long serialVersionUID = 1303130812779922197L;
 	
-	private String orderDate;
 	private int tableNum;
 	private int price;
 	
@@ -18,20 +17,13 @@ public class Seat implements Serializable{
 		super();
 	}
 	
-	public Seat(String orderDate, int tableNum, int price) {
+	public Seat(int tableNum, int price) {
 		super();
-		this.orderDate = orderDate;
 		this.tableNum = tableNum;
 		this.price = price;
 	}
 	
 	
-	public String getOrderDate() {
-		return orderDate;
-	}
-	public void setOrderDate(String orderDate) {
-		this.orderDate = orderDate;
-	}
 	public int getTableNum() {
 		return tableNum;
 	}
@@ -51,7 +43,7 @@ public class Seat implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Seat [orderDate=" + orderDate + ", tableNum=" + tableNum + ", price=" + price + "]";
+		return "Seat [ " + "tableNum=" + tableNum + ", price=" + price + "]";
 	}
 	
 	
