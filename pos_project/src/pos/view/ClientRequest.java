@@ -25,8 +25,12 @@ public class ClientRequest {
 			
 			switch(no)
 			{
-				case 1: ct.insertOrder(inputOrder()); break;
-				case 2: break;
+				case 1: 
+					ct.insertOrder(inputOrder());
+					break;
+				case 2: 
+					ct.selectTable(inputTableNum());
+					break;
 				case 3: break;
 				case 4: break;
 				case 9: break;
@@ -34,6 +38,15 @@ public class ClientRequest {
 			}
 		}while(true);		
 	}
+	
+	private int inputTableNum() 
+	{
+		System.out.print("테이블 번호 : ");
+		int tableNum = sc.nextInt();
+		return tableNum;
+	}
+
+	//주문
 	public MenuOrder inputOrder() {
 		System.out.print("테이블 번호 : ");
 		int tableNum = sc.nextInt();
@@ -47,6 +60,7 @@ public class ClientRequest {
 		return menuOrder;
 	}
 	
+	//메뉴에 대한 가격을 불러옴
 	public int selectMenuPrice(String menu)
 	{
 		return ct.selectMenuPrice(menu);

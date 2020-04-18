@@ -20,6 +20,15 @@ public class OrderList implements Serializable{
 	}
 	
 	
+	
+	public OrderList(String menu, int price) {
+		super();
+		this.menu = menu;
+		this.price = price;
+	}
+
+
+
 	public OrderList(String orderDate, int orderNum, String menu, int price) {
 		super();
 		this.orderDate = orderDate;
