@@ -26,15 +26,23 @@ public class ClientRequest {
 			switch(no)
 			{
 				case 1: 
-					ct.insertOrder(inputOrder());
+					MenuOrder menuOrder = inputOrder();
+					ct.insertOrder(menuOrder);
+					ct.insertOrderList(menuOrder);
 					break;
 				case 2: 
 					ct.selectTable(inputTableNum());
 					break;
-				case 3: break;
-				case 4: break;
-				case 9: break;
-				default: System.out.println("프로그램을 종료합니다."); return;
+				case 3:
+					ct.deleteTable(inputTableNum());
+					break;
+				case 4: 
+					ct.selectOrderList();
+					break;
+				case 9: 
+					System.out.println("프로그램을 종료합니다."); 
+					return;
+				default: break;
 			}
 		}while(true);		
 	}

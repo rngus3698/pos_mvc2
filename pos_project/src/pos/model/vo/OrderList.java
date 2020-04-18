@@ -69,8 +69,7 @@ public class OrderList implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "OrderList [orderDate=" + orderDate + ", orderNum=" + orderNum + ", menu=" + menu + ", price=" + price
-				+ "]";
+		return orderNum + ": orderDate=" + orderDate +  ", menu=" + menu + ", price=" + price;
 	}
 	
 	

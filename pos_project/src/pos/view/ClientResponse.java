@@ -1,5 +1,8 @@
 package pos.view;
 
+import java.util.ArrayList;
+
+import pos.model.vo.OrderList;
 import pos.model.vo.Seat;
 
 public class ClientResponse {
@@ -25,6 +28,26 @@ public class ClientResponse {
 			default: break;
 		}
 		
+	}
+
+	public void deleteView(int tableNum) 
+	{
+		System.out.println(tableNum + "번 테이블 결제 완료");
+	}
+
+	public void insertOrderListView() 
+	{
+		System.out.println("orderList insert 완료");
+		
+	}
+
+
+	public void orderListView(ArrayList<OrderList> list) {
+		// TODO Auto-generated method stub
+		for(OrderList ol : list)
+		{
+			System.out.println(ol);
+		}
 	}
 
 	
