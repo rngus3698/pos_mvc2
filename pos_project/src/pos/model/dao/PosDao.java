@@ -18,7 +18,7 @@ import pos.model.vo.MenuOrder;
 import pos.model.vo.OrderList;
 import pos.model.vo.Seat;
 
-public class JDBCJeonju {
+public class PosDao {
 
 	//menu테이블에서 메뉴에 해당하는 가격을 찾아옴
 	public int selectMenuPrice(Connection conn, String menu) {
@@ -199,7 +199,8 @@ public class JDBCJeonju {
 		return result;
 	}
 
-	public int insertOrderList(Connection conn, MenuOrder menuOrder) {
+	public int insertOrderList(Connection conn, MenuOrder menuOrder) 
+	{
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
@@ -239,7 +240,8 @@ public class JDBCJeonju {
 		return result;
 	}
 
-	public ArrayList<OrderList> selectOrderList(Connection conn) {
+	public ArrayList<OrderList> selectOrderList(Connection conn) 
+	{
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		

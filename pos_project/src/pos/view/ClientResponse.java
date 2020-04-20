@@ -7,9 +7,24 @@ import pos.model.vo.Seat;
 
 public class ClientResponse {
 
-	public void error(String string) {
-		// TODO Auto-generated method stub
-		System.out.println("error");
+	public void displayError(String error) 
+	{
+		switch(error)
+		{
+		case "select":
+			System.out.println("비어있는 테이블");
+			break;
+		case "insert":
+			
+			break;
+		case "delete":
+			
+			break;
+		case "update":
+			
+			break;
+		}
+
 	}
 
 	public void seatView(Seat seat) 
@@ -17,23 +32,9 @@ public class ClientResponse {
 		System.out.println(seat);
 	}
 
-	public void alert(String string) 
-	{
-		switch(string)
-		{
-		case "order":
-			System.out.println("주문이 들어갔습니다.");
-			break;
-			
-			default: break;
-		}
-		
-	}
+	
 
-	public void deleteView(int tableNum) 
-	{
-		System.out.println(tableNum + "번 테이블 결제 완료");
-	}
+	
 
 	public void insertOrderListView() 
 	{
@@ -43,7 +44,7 @@ public class ClientResponse {
 
 
 	public void orderListView(ArrayList<OrderList> list) {
-		// TODO Auto-generated method stub
+		
 		for(OrderList ol : list)
 		{
 			System.out.println(ol);

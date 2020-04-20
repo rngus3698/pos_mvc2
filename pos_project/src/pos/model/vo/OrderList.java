@@ -68,8 +68,9 @@ public class OrderList implements Serializable{
 	
 	
 	@Override
-	public String toString() {
-		return orderNum + ": orderDate=" + orderDate +  ", menu=" + menu + ", price=" + price;
+	public String toString() 
+	{
+		return orderNum + ": 주문시간 = " + orderDate +  " / 메뉴 = " + menu + " / 가격 = " + price;
 	}
 	
 	

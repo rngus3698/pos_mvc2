@@ -30,11 +30,11 @@ public class Controller {
 		
 		if(result > 0)
 		{
-			cr.alert("order");
+			System.out.println("주문이 들어갔습니다.");
 		}
 		else
 		{
-			cr.error("insert");
+			cr.displayError("insert");
 		}
 	}
 
@@ -46,7 +46,7 @@ public class Controller {
 		
 		if(seat == null)
 		{
-			cr.error("select");
+			cr.displayError("select");
 		}
 		else
 		{
@@ -63,11 +63,11 @@ public class Controller {
 		
 		if(result > 0)
 		{
-			cr.deleteView(tableNum);
+			System.out.println(tableNum + "번 테이블 결제 완료");
 		}
 		else
 		{
-			cr.error("delete");
+			cr.displayError("delete"); 
 		}
 	}
 
@@ -83,7 +83,7 @@ public class Controller {
 		}
 		else
 		{
-			cr.error("insert");
+			cr.displayError("insert");
 		}
 	}
 

@@ -8,7 +8,7 @@ import static common.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import pos.model.dao.JDBCJeonju;
+import pos.model.dao.PosDao;
 import pos.model.vo.MenuOrder;
 import pos.model.vo.OrderList;
 import pos.model.vo.Seat;
@@ -17,7 +17,7 @@ public class PosService {
 
 	public int selectMenuPrice(String menu) {
 		Connection conn = getConnection();
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao jj = new PosDao();
 		int price = jj.selectMenuPrice(conn, menu);
 		
 		close(conn);
@@ -29,7 +29,7 @@ public class PosService {
 	{
 		Connection conn = getConnection();
 		
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao jj = new PosDao();
 		
 		int result = jj.insertOrderMenu(conn,menuOrder);
 		
@@ -51,7 +51,7 @@ public class PosService {
 	{
 		Connection conn = getConnection();
 		
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao jj = new PosDao();
 		
 		Seat seat = jj.selectTable(conn, tableNum);
 		
@@ -64,7 +64,7 @@ public class PosService {
 	public int deleteTable(int tableNum) {
 		Connection conn = getConnection();
 		
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao jj = new PosDao();
 		
 		int result = jj.deleteTable(conn, tableNum);
 		
@@ -83,7 +83,7 @@ public class PosService {
 	public int insertOrderList(MenuOrder menuOrder) {
 		Connection conn = getConnection();
 		
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao jj = new PosDao();
 		
 		int result = jj.insertOrderList(conn, menuOrder);
 		
@@ -102,9 +102,9 @@ public class PosService {
 	public ArrayList<OrderList> selectOrderList() {
 		Connection conn = getConnection();
 		
-		JDBCJeonju jj = new JDBCJeonju();
+		PosDao pd = new PosDao();
 		
-		ArrayList<OrderList> list = jj.selectOrderList(conn);
+		ArrayList<OrderList> list = pd.selectOrderList(conn);
 		
 		close(conn);
 		
